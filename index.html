@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "Times New Roman", serif;
+            background: linear-gradient(to bottom, #4a90e2, #50c878);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .yes:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .no {
+            position: absolute;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="question">Will You Be My Valentine? <3</h1>
+    <div class="buttons">
+        <button class="btn yes" onclick="redirectToFlowers()">Yes</button>
+        <button class="btn no" onclick="moveNo()">No</button>
+    </div>
+    <script>
+        function moveNo() {
+            let button = document.querySelector('.no');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        function redirectToFlowers() {
+            window.location.href = "flower.html";
+        }
+    </script>
+</body>
+</html>
